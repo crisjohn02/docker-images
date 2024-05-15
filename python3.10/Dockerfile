@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.12.3-bullseye
 
 COPY ./requirements.txt /req/requirements.txt
 
