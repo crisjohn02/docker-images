@@ -33,7 +33,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 
 # Create a non-root user
-RUN addgroup --gid 1000 appuser && \
-    adduser --uid 1000 --gid 1000 --disabled-password --shell /bin/bash appuser
+# RUN addgroup --gid 1000 appuser && \
+#     adduser --uid 1000 --gid 1000 --disabled-password --shell /bin/bash appuser
 
-USER appuser
+# USER appuser
