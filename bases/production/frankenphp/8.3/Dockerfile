@@ -21,5 +21,8 @@ RUN install-php-extensions \
     bcmath \
 	pcntl \
 	exif \
-	redis \
-  mongodb
+	redis
+
+# Install MongoDB PHP extension via PECL
+RUN pecl install mongodb \
+    && echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongodb.ini
