@@ -21,4 +21,5 @@ RUN install-php-extensions \
     bcmath \
 	pcntl \
 	exif \
-	redis
+	redis \
+  mongodb
