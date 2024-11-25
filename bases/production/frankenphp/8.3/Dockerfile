@@ -21,8 +21,7 @@ RUN install-php-extensions \
     bcmath \
 	pcntl \
 	exif \
-	redis
+	redis-stable \
+	mongodb-stable
 
-# Install MongoDB PHP extension via PECL
-RUN pecl install mongodb \
-    && echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongodb.ini
+ENTRYPOINT [ "php", "artisan", "octane:start", "--server=frankenphp", "--host=0.0.0.0", "--port=80", "--admin-port=2019" ]
