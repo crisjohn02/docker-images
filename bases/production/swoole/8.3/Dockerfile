@@ -14,3 +14,9 @@ COPY php.ini "/usr/local/etc/php/php.ini"
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd intl zip gettext bcmath pcntl exif
+
+
+RUN pecl install mongodb-stable \
+    && docker-php-ext-enable mongodb
+
+WORKDIR /app

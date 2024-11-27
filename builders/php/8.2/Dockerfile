@@ -24,7 +24,8 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
 
 # Install PECL extensions
 RUN pecl install redis \
-    && docker-php-ext-enable redis
+    && pecl install mongodb \
+    && docker-php-ext-enable redis mongodb
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
